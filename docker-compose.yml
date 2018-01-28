@@ -1,0 +1,17 @@
+frontend:
+    image: nginx
+    volumes:
+        - ./proxy.conf:/etc/nginx/nginx.conf:ro
+        - ./JavaServiceTemplate/src/main/resources/ui:/data
+    ports:
+        - "8080:80"
+    links:
+        - backend:backend
+
+backend:
+    build: backend
+    volumes:
+        - ./JavaServiceTemplate:/JavaServiceTemplate
+        - ./backend/startService.sh:/startService.sh
+    entrypoint: 
+        - /startService.sh

@@ -1,0 +1,3 @@
+[submodule "JavaServiceTemplate"]
+	path = JavaServiceTemplate
+	url = git@github.com:NautiluX/JavaServiceTemplate.git
